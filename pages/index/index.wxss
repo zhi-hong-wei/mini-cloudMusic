@@ -1,0 +1,23 @@
+.img{
+  width: 95%;
+  height: 100%;
+ border-radius: 16rpx;
+}
+.playlist-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 10rpx;
+  flex-direction: row;
+}
+/* 设置高度，配合图片高度，将轮播点正确显示 */
+.swiper{
+  height: 328rpx;
+  margin-top:20rpx; 
+}
+.out{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content:center;
+}

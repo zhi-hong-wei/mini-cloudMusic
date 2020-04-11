@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "login":"/components/login/login",
+    "bottom":"/components/bottom/bottom"
+  }
+}

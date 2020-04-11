@@ -1,0 +1,11 @@
+<!--pages/musiclist/musiclist.wxml-->
+<view class='detail-container' style='background: url({{listInfo.coverImgUrl}}) no-repeat  top/cover'></view>
+<view class='detail-mask'></view>
+<view class='detail-info'>
+  <image src="{{listInfo.coverImgUrl}}" class='detail-img'></image>
+  <view class='detail'>
+    <view class='detail-nm'>{{listInfo.name}}</view>
+  </view>
+</view>
+
+<musiclist musiclist="{{musiclist}}"/>

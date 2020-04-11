@@ -1,0 +1,47 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/profile/profile",
+    "pages/blog/blog",
+    "pages/musiclist/musiclist",
+    "pages/player/player",
+    "pages/blog-edit/blog-edit",
+    "pages/blog-comment/blog-comment",
+    "pages/profile-playhistory/profile-playhistory",
+    "pages/profile-bloghistory/profile-bloghistory"
+  ],
+  "requiredBackgroundModes": [
+    "audio",
+    "location"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#d43c33",
+    "navigationBarTitleText": "云音乐",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "发现",
+        "iconPath": "/image/found.png",
+        "selectedIconPath": "/image/found-active.png"
+      },
+      {
+        "pagePath": "pages/blog/blog",
+        "text": "云村",
+        "iconPath": "/image/music.png",
+        "selectedIconPath": "/image/music-active.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的",
+        "iconPath": "/image/my.png",
+        "selectedIconPath": "/image/my-active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

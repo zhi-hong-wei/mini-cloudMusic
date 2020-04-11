@@ -1,0 +1,23 @@
+<view class="ctrl">
+  <view class="ctrl-item" bind:tap="onComment">
+    <i class="iconfont icon-pinglun1 icon"></i>
+    <text>评论</text>
+  </view>
+  <view class="ctrl-item share">
+  <!-- 分享功能只能在button中实现，定义open-type -->
+    <button open-type="share" data-blogid="{{blogId}}" data-blog="{{blog}}" class="share-btn" hover-class="share-hover">
+      <i class="iconfont icon-share_icon icon"></i>
+      <text>分享</text>
+    </button>
+  </view>
+</view>
+
+
+<login modalShow="{{loginShow}}" bind:loginsuccess="onLoginsuccess" bind:loginfail="onLoginfail" />
+
+<bottom modalShow="{{modalShow}}">
+  <view slot="modal-content">
+    <textarea name="content" class="comment-content" placeholder="写评论" value="{{content}}" fixed="true" bindinput="Input"></textarea>
+    <button class="send" bindtap="onSend" size="mini" style="font-size:32rpx">发送</button>
+  </view>
+</bottom>

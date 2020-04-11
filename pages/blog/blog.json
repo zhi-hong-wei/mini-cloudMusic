@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "search":"/components/search/search",
+    "login":"/components/login/login",
+    "blog-card":"/components/blog-card/blog-card",
+    "blog-ctrl":"/components/blog-ctrl/blog-ctrl"
+  },
+  "enablePullDownRefresh": true,
+    "navigationBarTitleText": "发现"
+}

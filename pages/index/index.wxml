@@ -1,0 +1,12 @@
+<swiper indicator-dots="true" autoplay="true" circular="true" class="swiper">
+<!-- wx:key="*this"指向元素本身 -->
+<block wx:for="{{imgurl}}" wx:key="url">
+<swiper-item><view class="out"><image src="{{item.fileid}}" mode="widthFix" class="img"></image></view></swiper-item>
+</block>
+</swiper>
+
+<view class="playlist-container">
+  <block wx:for="{{playlist}}" wx:key="_id">
+    <play-list playlist="{{item}}"></play-list>
+  </block>
+</view>
