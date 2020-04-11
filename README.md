@@ -5,8 +5,6 @@
 
 <hr/>
 
-[![GitHub stars](https://img.shields.io/github/stars/lsqy/taro-music.svg?style=flat&label=Star)](https://github.com/zhi-hong-wei/mini-cloudMusic/stargazers)
-
 
 ### 快速开始
 
