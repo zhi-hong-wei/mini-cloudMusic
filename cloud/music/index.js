@@ -7,6 +7,8 @@ const TcbRouter = require('tcb-router');
 
 var rp = require('request-promise');
 
+// 因版权问题，就不上传真接口了，如有需要可以访问网易云开源api网站
+const URL = 'http://musicapi.xxxxxxxxxx'
 
 // 云函数入口函数
 exports.main = async(event, context) => {
