@@ -8,107 +8,69 @@
 
 ### 快速开始
 
-#### 注意事项
 
+> 在运行本项目前，请先确保是小程序云开发环境，具体操作见[官网指导](https://developers.weixin.qq.com/miniprogram/dev/framework/)
 
-```
-export const baseUrl: string = 'http://localhost:3000' // 这里配置的这个url是后端服务的请求地址，示例中代表在本地启用的服务端口是3000，如果希望在真机上调试，那么就需要将后端服务部署到一个云主机上
-
-```
-
-> 在运行本项目前，请先确保已经全局安装了Taro，安装可见[官网指导](https://nervjs.github.io/taro/docs/GETTING-STARTED.html)
-
-```
-启动后端接口服务
-
-git clone https://github.com/Binaryify/NeteaseCloudMusicApi.git
-
-cd NeteaseCloudMusicApi
-
-npm i
-
-npm run start
-
-接下来启动前端项目
-
-git clone https://github.com/lsqy/taro-music.git
-
-cd taro-music
-
-npm i
-
-npm run dev:weapp
-
-```
 
 ### 功能列表
 
-- [x] 用户登陆
-- [x] 退出登陆
-- [x] 我的关注列表
-- [x] 我的粉丝列表
-- [ ] 我的动态列表
+- [x] 用户信息获取、显示
+- [x] 我的动态列表
 - [x] 最近播放列表
 - [ ] 我的电台
 - [ ] 我的收藏
 - [x] 推荐歌单
 - [x] 推荐电台
-- [x] 推荐电台
-- [x] 我创建的歌单列表
-- [x] 我收藏的歌单列表
-- [x] 共用的歌单详情列表
+- [x] 歌单数据去重
+- [x] 突破获取数据条数的限制
+- [x] 播放数量细节处理
+- [x] 云函数路由优化tcb-router
+- [ ] 添加喜欢歌单列表
+- [ ] 我收藏的歌单列表
 - [x] 歌曲播放页面
 - [x] 歌词滚动
-- [x] 歌曲切换播放模式（随机播放/单曲循环/顺序播放）
 - [x] 切换上一首/下一首
-- [x] 喜欢/取消喜欢某首歌曲
-- [x] 评论列表
-- [x] 视频播放
-- [x] 热搜列表
-- [x] 搜索（包含单曲/歌单/视频/歌手/专辑/电台/用户）
+- [x] 歌词随播放进度联动
+- [x] 歌词高亮显示
+- [x] 进度条拖动播放
+- [x] 进度条与播放时间联动
+- [x] iconfont字体图标
+- [x] 自动播放下一首
+- [x] 发布个人动态
+- [x] 上传文字、图片
+- [x] 时间格式化处理
+- [x] 是否授权判断
+- [x] 搜索功能（用户/发表的动态）
+- [x] 评论功能
+- [x] 分享功能
+- [x] 模板消息订阅
+- [x] 生成小程序码
 - [x] 统一的播放组件，方便进行切换页面后可以随时进入到播放页面
 
 ### 目录结构简要介绍
 
-> 这里主要介绍下`src`目录，因为开发主要是在这个目录下进行的
+> 这里主要介绍下各级目录
 
 ```
-- src
- - actions // `redux`中的相关异步操作在这里进行
- - assets // 静态资源目录，这里引入了所需的图片资源，以及`fontawesome`字体图标资源
- - components // 封装的项目中可复用的组件，目前只是抽象了`CLoading`(加载效果组件)、`CLyric`(歌词组件)、`CMusic`(正在播放组件)、`CSlide`(滑块组件)、`CTitle`、`CUserListItem`
- - constants // 项目中的常量定义，目前定义了`typescript`的公共定义、`reducers`的名称定义、状态码的定义
+ - cloud // 项目云函数文件
+ - components // 封装的项目中可复用的组件
+ - images // 项目中tabbar栏的图片
  - pages // 项目中的业务页面都在这个目录中
- - reducers // `redux`中的相关同步操作在这里进行
- - services // 可复用的服务可以放在这个目录中，目前只是封装了接口请求的公共服务，可以根据自己项目的需要进行其他服务的扩充
- - store // redux的初始文件
- - utils // 可以复用的工具方法可以放到这个目录当中，目前封装了格式化、歌词解析的相关方法
-  - decorators // 抽象的装饰器，主要为了解决在切换页面之后仍然可以继续保持播放状态，因为目前`taro`不支持全局组件
- - app.scss // 全局样式
- - app.tsx // 全局入口文件
- - base.scss // 基础样式
- - config.ts // 项目的全局配置，目前只是配置了`baseUrl`是后端服务的基准请求地址
+ - utils // 可以复用的工具方法可以放到这个目录当中，目前封装了时间格式化、让小程序支持async await写法的相关方法
+ - app.js // 全局入口文件
+ - app.json // 页面的配置文件
+ - app.wxss // 全局样式
+ - iconfont.wxss // 引入iconfont基础样式
+ - project.config.json // 项目的配置文件
 
 ```
 
 ### todo
 
-- 复用的评论列表
-- 搜索功能 *已完成部分功能*
-- 个人主页支持跳转
+- 我的收藏
+- 播放模式（随机/单曲/顺序）
 - 歌手页面
-- `react-hooks`重构部分功能,正在进行中
 
-### 最近更新
-
-- [x] 搜索功能
-- [x] 视频播放
-- [x] mv播放
-- [x] 视频与mv中的评论列表
-
-<div align="center">
-  <image width="900" src="https://oscimg.oschina.net/oscnet/498fdfc98cc89d72196dded4f54afa29ed4.jpg"/>
-</div>
 
 ### 效果图预览
 
@@ -116,15 +78,15 @@ npm run dev:weapp
 
 
 <div align="center">
-  <image width="900" src="https://oscimg.oschina.net/oscnet/f52f4448ce3475f5ecd002958ae1413a3dd.jpg"/>
+  <image width="300" src="https://i.loli.net/2020/04/12/hZFz9ijwk1ItuXQ.png"/>
+ <image width="300" src="https://i.loli.net/2020/04/12/soMeym9nwxD8Bbg.png"/>
+ <image width="300" src="https://i.loli.net/2020/04/12/fiOZMnjUxYy74Sc.png"/>
 </div>
 
 <div align="center">
-  <image width="900" src="https://oscimg.oschina.net/oscnet/446008d8690a962a105f839c46d7638b89b.jpg"/>
-</div>
-
-<div align="center">
-  <image width="900" src="https://oscimg.oschina.net/oscnet/38e5dcac4baaca87195e95a115132cb7958.jpg"/>
+ <image width="300" src="https://i.loli.net/2020/04/12/ImbnaD6HrTtdpsz.png"/>
+ <image width="300" src="https://i.loli.net/2020/04/12/z1T4RnvXtDySPGk.png"/>
+  <image width="300" src="https://i.loli.net/2020/04/12/uBsxlJ1v8PbmHAi.png"/>
 </div>
 
 
