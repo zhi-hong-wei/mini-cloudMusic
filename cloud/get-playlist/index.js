@@ -7,6 +7,8 @@ var rp = require('request-promise');
 
 const db = cloud.database()
 
+// 因版权问题，就不上传真接口了，如有需要可以访问网易云开源api网站
+const URL = 'http://musicapi.xxxxxxxxxx'
 
 const playbase = db.collection('playlist')
 
